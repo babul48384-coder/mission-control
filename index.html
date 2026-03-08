@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #0a0a0b;
             color: #fafafa;
             min-height: 100vh;
@@ -49,61 +49,66 @@
         .activity-event { font-size: 0.875rem; color: #a1a1aa; }
         
         .loading { text-align: center; padding: 40px; color: #71717a; }
+        .error { color: #ef4444; text-align: center; padding: 20px; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="logo">
-                <div class="logo-icon">馃殌</div>
+                <div class="logo-icon">MC</div>
                 <h1>Mission Control</h1>
             </div>
             <div class="last-updated" id="last-updated">Loading...</div>
         </header>
 
-        <div class="stats-row" id="stats-row"></div>
+        <div class="stats-row" id="stats-row">
+            <div class="stat-pill"><span class="num">-</span><span class="label">Agents</span></div>
+            <div class="stat-pill"><span class="num">-</span><span class="label">Active</span></div>
+            <div class="stat-pill"><span class="num">-</span><span class="label">Skills</span></div>
+        </div>
 
         <div class="grid">
             <div class="card">
                 <div class="card-header">
-                    <span>馃</span>
-                    <h2>Agent 鐘舵€?/h2>
+                    <span>Agents</span>
+                    <h2>Agent Status</h2>
                 </div>
                 <div class="agent-list" id="agent-list">
-                    <div class="loading">Loading...</div>
+                    <div class="loading">Loading agents...</div>
                 </div>
             </div>
             <div class="card">
                 <div class="card-header">
-                    <span>馃搵</span>
-                    <h2>鏈€杩戞椿鍔?/h2>
+                    <span>Activity</span>
+                    <h2>Recent Activity</h2>
                 </div>
                 <div class="activity-list" id="activity-list">
-                    <div class="loading">Loading...</div>
+                    <div class="loading">Loading activity...</div>
                 </div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-header">
-                <span>馃搳</span>
-                <h2>绯荤粺鐘舵€?/h2>
+                <span>Status</span>
+                <h2>System Status</h2>
             </div>
             <div class="agent-list">
                 <div class="agent-card">
-                    <div class="agent-name">馃寪 Gateway</div>
+                    <div class="agent-name">Gateway</div>
                     <div class="agent-status active"><span class="dot"></span> Running</div>
                 </div>
                 <div class="agent-card">
-                    <div class="agent-name">馃摫 Feishu</div>
+                    <div class="agent-name">Feishu</div>
                     <div class="agent-status active"><span class="dot"></span> 10/10 Connected</div>
                 </div>
                 <div class="agent-card">
-                    <div class="agent-name">馃惓 Coze</div>
+                    <div class="agent-name">Coze</div>
                     <div class="agent-status active"><span class="dot"></span> Running</div>
                 </div>
                 <div class="agent-card">
-                    <div class="agent-name">馃摟 Mailboxes</div>
+                    <div class="agent-name">Mailboxes</div>
                     <div class="agent-status active"><span class="dot"></span> Active</div>
                 </div>
             </div>
@@ -114,54 +119,81 @@
         const DATA_URL = './data/dashboard-data.json';
         let lastUpdateTime = null;
 
+        function escapeHtml(str) {
+            if (!str) return '';
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
         function updateTime() {
             if (!lastUpdateTime) return;
             const now = new Date();
             const diff = Math.floor((now - lastUpdateTime) / 1000);
-            let text = diff < 60 ? `${diff}s ago` : `${Math.floor(diff / 60)}m ago`;
-            document.getElementById('last-updated').textContent = `Updated ${text}`;
+            let text = diff < 60 ? diff + 's ago' : Math.floor(diff / 60) + 'm ago';
+            document.getElementById('last-updated').textContent = 'Updated ' + text;
         }
 
         async function fetchData() {
             try {
                 const response = await fetch(DATA_URL + '?_=' + Date.now());
+                if (!response.ok) throw new Error('HTTP ' + response.status);
                 const data = await response.json();
                 lastUpdateTime = new Date(data.lastUpdated);
                 renderDashboard(data);
             } catch (err) {
-                console.error('Failed to fetch:', err);
+                console.error('Fetch error:', err);
+                document.getElementById('agent-list').innerHTML = '<div class="error">Failed to load data: ' + escapeHtml(err.message) + '</div>';
             }
         }
 
         function renderDashboard(data) {
             // Stats
             const statsRow = document.getElementById('stats-row');
-            statsRow.innerHTML = `
-                <div class="stat-pill"><span class="num">${data.agents?.length || 10}</span><span class="label">Agents</span></div>
-                <div class="stat-pill"><span class="num">${data.activeAgents || 0}</span><span class="label">Active</span></div>
-                <div class="stat-pill"><span class="num">${data.skillsReady || 979}</span><span class="label">Skills</span></div>
-            `;
+            statsRow.innerHTML = 
+                '<div class="stat-pill"><span class="num">' + (data.agents ? data.agents.length : 10) + '</span><span class="label">Agents</span></div>' +
+                '<div class="stat-pill"><span class="num">' + (data.activeAgents || 0) + '</span><span class="label">Active</span></div>' +
+                '<div class="stat-pill"><span class="num">' + (data.skillsReady || 979) + '</span><span class="label">Skills</span></div>';
 
             // Agents
             const agentList = document.getElementById('agent-list');
             if (data.agents && data.agents.length > 0) {
-                agentList.innerHTML = data.agents.map(a => `
-                    <div class="agent-card">
-                        <div class="agent-name">${a.emoji || '馃'} ${a.name}</div>
-                        <div class="agent-status ${a.status}"><span class="dot"></span> ${a.status}</div>
-                        ${a.currentTask ? `<div class="agent-task">${a.currentTask}</div>` : ''}
-                        ${a.learning ? '<div class="agent-learning">馃摎 Learning</div>' : ''}
-                    </div>
-                `).join('');
+                let html = '';
+                for (let i = 0; i < data.agents.length; i++) {
+                    const a = data.agents[i];
+                    const emoji = a.emoji || '';
+                    const name = escapeHtml(a.name) || 'Unknown';
+                    const status = a.status || 'idle';
+                    const task = a.currentTask ? escapeHtml(a.currentTask) : '';
+                    const learning = a.learning ? '<div class="agent-learning">Learning</div>' : '';
+                    
+                    html += '<div class="agent-card">' +
+                        '<div class="agent-name">' + emoji + ' ' + name + '</div>' +
+                        '<div class="agent-status ' + status + '"><span class="dot"></span> ' + status + '</div>' +
+                        (task ? '<div class="agent-task">' + task + '</div>' : '') +
+                        learning +
+                        '</div>';
+                }
+                agentList.innerHTML = html;
+            } else {
+                agentList.innerHTML = '<div class="loading">No agents found</div>';
             }
 
             // Activity
             const activityList = document.getElementById('activity-list');
             if (data.recentActivity && data.recentActivity.length > 0) {
-                activityList.innerHTML = data.recentActivity.slice(0, 8).map(a => {
+                let html = '';
+                const items = data.recentActivity.slice(0, 8);
+                for (let i = 0; i < items.length; i++) {
+                    const a = items[i];
                     const t = new Date(a.time);
-                    return `<div class="activity-item"><div class="activity-time">${t.getHours().toString().padStart(2,'0')}:${t.getMinutes().toString().padStart(2,'0')}</div><div class="activity-event">${a.event}</div></div>`;
-                }).join('');
+                    const time = t.getHours().toString().padStart(2,'0') + ':' + t.getMinutes().toString().padStart(2,'0');
+                    const event = escapeHtml(a.event) || '';
+                    html += '<div class="activity-item"><div class="activity-time">' + time + '</div><div class="activity-event">' + event + '</div></div>';
+                }
+                activityList.innerHTML = html;
+            } else {
+                activityList.innerHTML = '<div class="loading">No recent activity</div>';
             }
         }
 
