@@ -1,160 +1,31 @@
 {
-  "lastUpdated": "2026-03-09T03:55:00Z",
+  "lastUpdated": "2026-03-09T04:00:00Z",
   "activeAgents": 7,
   "skillsReady": 979,
   "actionRequired": [],
   "agents": [
-    {
-      "id": "main",
-      "name": "灏忔柊",
-      "emoji": "馃",
-      "status": "active",
-      "model": "glm-5",
-      "currentTask": "绯荤粺鍗忚皟",
-      "lastActivity": "2026-03-09T03:55:00Z",
-      "learning": false,
-      "unreadMessages": 0
-    },
-    {
-      "id": "general-manager",
-      "name": "鎬荤粡鐞?,
-      "emoji": "馃憯",
-      "status": "active",
-      "model": "glm-5",
-      "currentTask": "瀛︿範浠诲姟鍗忚皟",
-      "lastActivity": "2026-03-09T03:53:00Z",
-      "learning": false,
-      "unreadMessages": 0
-    },
-    {
-      "id": "content-creator",
-      "name": "鍐呭鍒涗綔",
-      "emoji": "鉁嶏笍",
-      "status": "active",
-      "model": "glm-5",
-      "currentTask": "Coze閮ㄧ讲瀛︿範",
-      "lastActivity": "2026-03-09T03:53:00Z",
-      "learning": true,
-      "unreadMessages": 1
-    },
-    {
-      "id": "data-analyst",
-      "name": "鏁版嵁鍒嗘瀽",
-      "emoji": "馃搳",
-      "status": "active",
-      "model": "glm-5",
-      "currentTask": "BI宸ュ叿瀛︿範",
-      "lastActivity": "2026-03-09T03:53:00Z",
-      "learning": true,
-      "unreadMessages": 1
-    },
-    {
-      "id": "e-commerce-operator",
-      "name": "鐢靛晢杩愯惀",
-      "emoji": "馃洅",
-      "status": "active",
-      "model": "glm-5",
-      "currentTask": "骞冲彴瑙勫垯瀛︿範",
-      "lastActivity": "2026-03-09T03:53:00Z",
-      "learning": true,
-      "unreadMessages": 1
-    },
-    {
-      "id": "customer-service",
-      "name": "瀹㈡湇",
-      "emoji": "馃帶",
-      "status": "active",
-      "model": "glm-5",
-      "currentTask": "瀹㈡湇鎶€鑳藉涔?,
-      "lastActivity": "2026-03-09T03:53:00Z",
-      "learning": true,
-      "unreadMessages": 1
-    },
-    {
-      "id": "supply-chain",
-      "name": "渚涘簲閾?,
-      "emoji": "馃摝",
-      "status": "active",
-      "model": "glm-5",
-      "currentTask": "搴撳瓨绠＄悊瀛︿範",
-      "lastActivity": "2026-03-09T03:53:00Z",
-      "learning": true,
-      "unreadMessages": 1
-    },
-    {
-      "id": "finance",
-      "name": "璐㈠姟",
-      "emoji": "馃挵",
-      "status": "active",
-      "model": "glm-5",
-      "currentTask": "璐㈠姟鍒嗘瀽瀛︿範",
-      "lastActivity": "2026-03-09T03:53:00Z",
-      "learning": true,
-      "unreadMessages": 1
-    },
-    {
-      "id": "virtual-live",
-      "name": "铏氭嫙鐩存挱",
-      "emoji": "馃幀",
-      "status": "active",
-      "model": "glm-5",
-      "currentTask": "鐩存挱鎶€鏈涔?,
-      "lastActivity": "2026-03-09T03:53:00Z",
-      "learning": true,
-      "unreadMessages": 1
-    },
-    {
-      "id": "pdd",
-      "name": "鎷煎澶氳繍钀?,
-      "emoji": "馃泹锔?,
-      "status": "idle",
-      "model": "glm-5",
-      "currentTask": null,
-      "lastActivity": "2026-03-09T02:00:00Z",
-      "learning": false,
-      "unreadMessages": 0
-    }
+    {"id": "main", "name": "Xiaoxin", "emoji": "LA", "status": "active", "model": "glm-5", "currentTask": "System coordination", "lastActivity": "2026-03-09T04:00:00Z", "learning": false, "unreadMessages": 0},
+    {"id": "general-manager", "name": "General Manager", "emoji": "GB", "status": "active", "model": "glm-5", "currentTask": "Learning task coordination", "lastActivity": "2026-03-09T03:53:00Z", "learning": false, "unreadMessages": 0},
+    {"id": "content-creator", "name": "Content Creator", "emoji": "CC", "status": "active", "model": "glm-5", "currentTask": "Coze deployment learning", "lastActivity": "2026-03-09T03:53:00Z", "learning": true, "unreadMessages": 1},
+    {"id": "data-analyst", "name": "Data Analyst", "emoji": "DA", "status": "active", "model": "glm-5", "currentTask": "BI tools learning", "lastActivity": "2026-03-09T03:53:00Z", "learning": true, "unreadMessages": 1},
+    {"id": "e-commerce-operator", "name": "E-commerce Ops", "emoji": "EC", "status": "active", "model": "glm-5", "currentTask": "Platform rules learning", "lastActivity": "2026-03-09T03:53:00Z", "learning": true, "unreadMessages": 1},
+    {"id": "customer-service", "name": "Customer Service", "emoji": "CS", "status": "active", "model": "glm-5", "currentTask": "Service skills learning", "lastActivity": "2026-03-09T03:53:00Z", "learning": true, "unreadMessages": 1},
+    {"id": "supply-chain", "name": "Supply Chain", "emoji": "SC", "status": "active", "model": "glm-5", "currentTask": "Inventory management learning", "lastActivity": "2026-03-09T03:53:00Z", "learning": true, "unreadMessages": 1},
+    {"id": "finance", "name": "Finance", "emoji": "FN", "status": "active", "model": "glm-5", "currentTask": "Financial analysis learning", "lastActivity": "2026-03-09T03:53:00Z", "learning": true, "unreadMessages": 1},
+    {"id": "virtual-live", "name": "Virtual Live", "emoji": "VL", "status": "active", "model": "glm-5", "currentTask": "Live streaming learning", "lastActivity": "2026-03-09T03:53:00Z", "learning": true, "unreadMessages": 1},
+    {"id": "pdd", "name": "PDD Operator", "emoji": "PD", "status": "idle", "model": "glm-5", "currentTask": null, "lastActivity": "2026-03-09T02:00:00Z", "learning": false, "unreadMessages": 0}
   ],
   "crons": [
-    {
-      "name": "Agent Status Update",
-      "schedule": "Every 5 minutes",
-      "status": "ok",
-      "errors": 0
-    }
+    {"name": "Agent Status Update", "schedule": "Every 5 minutes", "status": "ok", "errors": 0}
   ],
   "recentActivity": [
-    {
-      "time": "2026-03-09T03:53:00Z",
-      "event": "鉁?鎵€鏈夐儴闂ㄥ凡纭鏀跺埌瀛︿範浠诲姟"
-    },
-    {
-      "time": "2026-03-09T03:50:00Z",
-      "event": "馃摙 鎬荤粡鐞嗕笅鍙戝涔犱换鍔″埌鍚勯儴闂ㄩ偖绠?
-    },
-    {
-      "time": "2026-03-09T03:40:00Z",
-      "event": "鉁?缇よ亰婵€娲绘墍鏈?Agent"
-    },
-    {
-      "time": "2026-03-09T03:36:00Z",
-      "event": "鉁?浠〃鐩樻暟鎹帹閫佹垚鍔?
-    },
-    {
-      "time": "2026-03-09T03:30:00Z",
-      "event": "鉁?Agent 鐘舵€佽拷韪郴缁熼厤缃畬鎴?
-    },
-    {
-      "time": "2026-03-09T03:15:00Z",
-      "event": "鉁?蹇冭烦妫€鏌ユ敹浠剁閰嶇疆瀹屾垚"
-    },
-    {
-      "time": "2026-03-09T03:10:00Z",
-      "event": "鉁?UI鎿嶆帶 (desktop-control) 閮ㄧ讲瀹屾垚"
-    },
-    {
-      "time": "2026-03-09T02:50:00Z",
-      "event": "鉁?Coze API 娴嬭瘯鎴愬姛"
-    }
+    {"time": "2026-03-09T03:53:00Z", "event": "All departments confirmed learning tasks"},
+    {"time": "2026-03-09T03:50:00Z", "event": "Manager sent learning tasks to mailboxes"},
+    {"time": "2026-03-09T03:40:00Z", "event": "All agents activated in group chat"},
+    {"time": "2026-03-09T03:36:00Z", "event": "Dashboard data pushed successfully"},
+    {"time": "2026-03-09T03:30:00Z", "event": "Agent status tracking configured"},
+    {"time": "2026-03-09T03:15:00Z", "event": "Heartbeat inbox check configured"},
+    {"time": "2026-03-09T03:10:00Z", "event": "UI control (desktop-control) deployed"},
+    {"time": "2026-03-09T02:50:00Z", "event": "Coze API test successful"}
   ]
 }
