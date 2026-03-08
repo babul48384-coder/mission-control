@@ -1,112 +1,127 @@
 {
-  "lastUpdated": "2026-03-09T03:15:00Z",
-  "activeAgents": 3,
+  "lastUpdated": "2026-03-09T03:29:43.639417",
+  "activeAgents": 0,
   "skillsReady": 979,
   "actionRequired": [],
   "agents": [
     {
       "id": "main",
-      "name": "小新",
-      "emoji": "🦞",
-      "status": "active",
-      "model": "glm-5"
+      "name": "灏忔柊",
+      "emoji": "馃",
+      "status": "idle",
+      "model": "glm-5",
+      "currentTask": null,
+      "lastActivity": null,
+      "learning": false,
+      "unreadMessages": 0
     },
     {
       "id": "general-manager",
-      "name": "总经理",
-      "emoji": "👔",
-      "status": "active",
-      "model": "glm-5"
+      "name": "鎬荤粡鐞?,
+      "emoji": "馃憯",
+      "status": "idle",
+      "model": "glm-5",
+      "currentTask": null,
+      "lastActivity": null,
+      "learning": false,
+      "unreadMessages": 1
     },
     {
       "id": "e-commerce-operator",
-      "name": "电商运营",
-      "emoji": "🛒",
+      "name": "鐢靛晢杩愯惀",
+      "emoji": "馃洅",
       "status": "idle",
-      "model": "glm-5"
+      "model": "glm-5",
+      "currentTask": null,
+      "lastActivity": null,
+      "learning": false,
+      "unreadMessages": 2
     },
     {
       "id": "content-creator",
-      "name": "内容创作",
-      "emoji": "✍️",
+      "name": "鍐呭鍒涗綔",
+      "emoji": "鉁嶏笍",
       "status": "idle",
-      "model": "glm-5"
+      "model": "glm-5",
+      "currentTask": null,
+      "lastActivity": null,
+      "learning": false,
+      "unreadMessages": 2
     },
     {
       "id": "virtual-live",
-      "name": "虚拟直播",
-      "emoji": "🎬",
+      "name": "铏氭嫙鐩存挱",
+      "emoji": "馃幀",
       "status": "idle",
-      "model": "glm-5"
+      "model": "glm-5",
+      "currentTask": null,
+      "lastActivity": null,
+      "learning": false,
+      "unreadMessages": 1
     },
     {
       "id": "data-analyst",
-      "name": "数据分析",
-      "emoji": "📊",
+      "name": "鏁版嵁鍒嗘瀽",
+      "emoji": "馃搳",
       "status": "idle",
-      "model": "glm-5"
+      "model": "glm-5",
+      "currentTask": null,
+      "lastActivity": null,
+      "learning": false,
+      "unreadMessages": 2
     },
     {
       "id": "customer-service",
-      "name": "客服",
-      "emoji": "🎧",
+      "name": "瀹㈡湇",
+      "emoji": "馃帶",
       "status": "idle",
-      "model": "glm-5"
+      "model": "glm-5",
+      "currentTask": null,
+      "lastActivity": null,
+      "learning": false,
+      "unreadMessages": 1
     },
     {
       "id": "supply-chain",
-      "name": "供应链",
-      "emoji": "📦",
+      "name": "渚涘簲閾?,
+      "emoji": "馃摝",
       "status": "idle",
-      "model": "glm-5"
+      "model": "glm-5",
+      "currentTask": null,
+      "lastActivity": null,
+      "learning": false,
+      "unreadMessages": 2
     },
     {
       "id": "finance",
-      "name": "财务",
-      "emoji": "💰",
+      "name": "璐㈠姟",
+      "emoji": "馃挵",
       "status": "idle",
-      "model": "glm-5"
+      "model": "glm-5",
+      "currentTask": null,
+      "lastActivity": null,
+      "learning": false,
+      "unreadMessages": 1
     },
     {
       "id": "pdd",
-      "name": "拼多多运营",
-      "emoji": "🛍️",
+      "name": "鎷煎澶氳繍钀?,
+      "emoji": "馃泹锔?,
       "status": "idle",
-      "model": "glm-5"
+      "model": "glm-5",
+      "currentTask": null,
+      "lastActivity": null,
+      "learning": false,
+      "unreadMessages": 0
     }
   ],
   "crons": [
     {
-      "name": "Heartbeat Check",
-      "schedule": "Every 30 minutes",
+      "name": "Agent Status Update",
+      "schedule": "Every 5 minutes",
       "status": "ok",
       "errors": 0
     }
   ],
-  "recentActivity": [
-    {
-      "time": "2026-03-09T03:10:00Z",
-      "event": "✅ UI操控 (desktop-control) 部署完成"
-    },
-    {
-      "time": "2026-03-09T02:50:00Z",
-      "event": "✅ Coze API 测试成功"
-    },
-    {
-      "time": "2026-03-09T02:30:00Z",
-      "event": "✅ CLI工具安装完成 (gh, ffmpeg, jq, rg)"
-    },
-    {
-      "time": "2026-03-09T01:30:00Z",
-      "event": "✅ Agent邮箱系统配置完成"
-    },
-    {
-      "time": "2026-03-09T00:50:00Z",
-      "event": "✅ 技能发现限制解除 (197 → 1225)"
-    },
-    {
-      "time": "2026-03-08T23:40:00Z",
-      "event": "✅ 飞书机器人配置完成 (10个)"
-    }
-  ]
+  "recentActivity": []
 }
