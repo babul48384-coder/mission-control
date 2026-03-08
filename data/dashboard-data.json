@@ -1,0 +1,112 @@
+{
+  "lastUpdated": "2026-03-09T03:15:00Z",
+  "activeAgents": 3,
+  "skillsReady": 979,
+  "actionRequired": [],
+  "agents": [
+    {
+      "id": "main",
+      "name": "小新",
+      "emoji": "🦞",
+      "status": "active",
+      "model": "glm-5"
+    },
+    {
+      "id": "general-manager",
+      "name": "总经理",
+      "emoji": "👔",
+      "status": "active",
+      "model": "glm-5"
+    },
+    {
+      "id": "e-commerce-operator",
+      "name": "电商运营",
+      "emoji": "🛒",
+      "status": "idle",
+      "model": "glm-5"
+    },
+    {
+      "id": "content-creator",
+      "name": "内容创作",
+      "emoji": "✍️",
+      "status": "idle",
+      "model": "glm-5"
+    },
+    {
+      "id": "virtual-live",
+      "name": "虚拟直播",
+      "emoji": "🎬",
+      "status": "idle",
+      "model": "glm-5"
+    },
+    {
+      "id": "data-analyst",
+      "name": "数据分析",
+      "emoji": "📊",
+      "status": "idle",
+      "model": "glm-5"
+    },
+    {
+      "id": "customer-service",
+      "name": "客服",
+      "emoji": "🎧",
+      "status": "idle",
+      "model": "glm-5"
+    },
+    {
+      "id": "supply-chain",
+      "name": "供应链",
+      "emoji": "📦",
+      "status": "idle",
+      "model": "glm-5"
+    },
+    {
+      "id": "finance",
+      "name": "财务",
+      "emoji": "💰",
+      "status": "idle",
+      "model": "glm-5"
+    },
+    {
+      "id": "pdd",
+      "name": "拼多多运营",
+      "emoji": "🛍️",
+      "status": "idle",
+      "model": "glm-5"
+    }
+  ],
+  "crons": [
+    {
+      "name": "Heartbeat Check",
+      "schedule": "Every 30 minutes",
+      "status": "ok",
+      "errors": 0
+    }
+  ],
+  "recentActivity": [
+    {
+      "time": "2026-03-09T03:10:00Z",
+      "event": "✅ UI操控 (desktop-control) 部署完成"
+    },
+    {
+      "time": "2026-03-09T02:50:00Z",
+      "event": "✅ Coze API 测试成功"
+    },
+    {
+      "time": "2026-03-09T02:30:00Z",
+      "event": "✅ CLI工具安装完成 (gh, ffmpeg, jq, rg)"
+    },
+    {
+      "time": "2026-03-09T01:30:00Z",
+      "event": "✅ Agent邮箱系统配置完成"
+    },
+    {
+      "time": "2026-03-09T00:50:00Z",
+      "event": "✅ 技能发现限制解除 (197 → 1225)"
+    },
+    {
+      "time": "2026-03-08T23:40:00Z",
+      "event": "✅ 飞书机器人配置完成 (10个)"
+    }
+  ]
+}
